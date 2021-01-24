@@ -22,3 +22,10 @@ def add_todo(request):
     todo.save()
     return redirect(test)
 
+def add_book(request):
+    form = request.POST
+    title = form["book_title"]
+    bshop = BShop(title=title)
+    bshop.save()
+    return redirect(books)
+

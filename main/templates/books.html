@@ -6,12 +6,55 @@
     <title>BookStore</title>
 </head>
 <body>
-    {% for bookstore in book_list %}
+    <section>
+        <div class="create_container">
+            <form action="{% url 'add-book' %}" method="POST">
+                {% csrf_token %}
+                <input 
+                    class="create_title"
+                    type="text"
+                    placeholder="Заголовок книги"
+                    name="book_title">
+                <input 
+                    class="create_subtitle"
+                    type="text"
+                    placeholder="Подзаголовок книги"
+                    name="book_subtitle">
+                <input 
+                    class="create_discription"
+                    type="text"
+                    placeholder="Описание книги"
+                    name="book_discription">
+                <input 
+                    class="create_price"
+                    type="text"
+                    placeholder="Цена книги"
+                    name="book_price">
+                <input 
+                    class="create_genre"
+                    type="text"
+                    placeholder="Жанр книги"
+                    name="book_genre">
+                <input 
+                    class="create_author"
+                    type="text"
+                    placeholder="Автор книги"
+                    name="book_author">
+                <input 
+                    class="create_year"
+                    type="text"
+                    placeholder="год"
+                    name="book_year">
+                <button class="create_button">Добавить</button>
+            </form>
+        </div>
+        {% for bookstore in book_list %}
 
-    <h4>{{ bookstore.title }}</h4>
-    {{ bookstore.author }}
-    {{ bookstore.price }}
+        <h4>{{ bookstore.title }}</h4>
+        {{ bookstore.author }}
+        {{ bookstore.price }}
 
-    {% endfor %}
+        {% endfor %}
+    </section>
 </body>
 </html>
