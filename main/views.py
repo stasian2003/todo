@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from .models import ToDo
 from .models import BShop
 
@@ -14,4 +14,11 @@ def books(request):
     book_list = BShop.objects.all()
 
     return render(request, 'books.html', {"book_list":book_list})
+
+def add_todo(request):
+    form = request.POST
+    text = form["todo_text"]
+    todo = ToDo(text=text)
+    todo.save()
+    return redirect(test)
 
