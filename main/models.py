@@ -16,3 +16,4 @@ class BShop(models.Model):
     author = models.CharField(max_length=80)
     year = models.CharField(max_length=4)
     date = models.DateField(auto_now_add=True)
+    is_favorite = models.BooleanField(default=False)
