@@ -38,9 +38,9 @@
                 <div class="todo_item_header">
                     <label class="checkbox_container">
                         <input type="checkbox">
-                        {% if todo.is_closed %}
+                        <!-- {% if todo.is_closed %}
                             
-                            {% endif %}
+                            {% endif %} -->
                         <span class="checkmark"></span>
                     </label>
                     <h4><a href="{% url 'close-todo' todo.id %}">{{ todo.text }}</a></h4>
@@ -56,6 +56,7 @@
                         {% endif %}
 
                         <a href="{% url 'delete-todo' todo.id %}"><img src="{% static './items/korzina.png' %}"></a>
+                        <a href="{% url 'todo' todo.id %}">...</a>
                     </div>
                 </div>
             </div>

@@ -30,6 +30,7 @@ urlpatterns = [
     path('mark-todo/<id>', mark_todo, name="mark-todo"),
     path('unmark-todo/<id>', unmark_todo, name="unmark-todo"),
     path('close-todo/<id>', close_todo, name="close-todo"),
+    path('todo/<id>', todo, name="todo"),
     
     
 ] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

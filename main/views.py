@@ -57,3 +57,7 @@ def close_todo(request, id):
     todo.is_closed = not todo.is_closed
     todo.save()
     return redirect(test)
+
+def todo(request, id):
+    todo_object = ToDo.objects.filter(id=id)
+    return render(request, 'todo.html', {"todo_list":todo_object})
